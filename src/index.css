@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Safe area para dispositivos com notch/home indicator */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+@layer components {
+  .dotted-box {
+    border: 1px dotted rgba(201, 169, 98, 0.6);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .dotted-box {
+      padding: 1.25rem;
+    }
+  }
+  .dotted-box-white {
+    border: 1px dotted rgba(255, 255, 255, 0.4);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .dotted-box-white {
+      padding: 1.25rem;
+    }
+  }
+  .section-label {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    color: #c9a962;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  @media (min-width: 768px) {
+    .section-label {
+      font-size: 0.875rem;
+    }
+  }
+  .heading-display {
+    font-family: Merriweather, Georgia, serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.375rem;
+    line-height: 1.25;
+  }
+  @media (min-width: 480px) {
+    .heading-display {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .heading-display {
+      font-size: 1.875rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .heading-display {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+/* Animação de entrada do Hero (keyframes em CSS para garantir que rode) */
+@keyframes hero-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-entrance {
+  opacity: 0;
+  animation: hero-fade-in-up 0.8s ease-out forwards;
+}
+
+/* Imagem do Hero: tamanho equilibrado no desktop */
+.hero-image {
+  max-height: min(75vh, 420px);
+}
+@media (min-width: 1024px) {
+  .hero-image {
+    max-height: min(120vh, 680px);
+  }
+}
+
+/* Animações ao rolar a página */
+@layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+  }
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .animate-on-scroll-left {
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .animate-on-scroll-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .animate-on-scroll-right {
+    opacity: 0;
+    transform: translateX(36px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .animate-on-scroll-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .animate-on-scroll-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .animate-on-scroll-scale.in-view {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Transições suaves globais para botões e links */
+  .btn-gold {
+    @apply transition-all duration-300;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 169, 98, 0.35);
+  }
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+}
