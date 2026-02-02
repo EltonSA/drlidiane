@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center w-full">
           {/* Left: text + CTAs - animação de entrada */}
           <div className="text-white order-2 lg:order-1 hero-entrance" style={{ animationDelay: '0.1s' }}>
-            <p className="section-label mb-4">Direito Previdenciário</p>
+            <p className="section-label mb-4">Direito Previdenciário E TRABALHISTA</p>
             <h1 className="heading-display mb-4">
               Especialista em garantir seus direitos junto ao INSS
             </h1>
@@ -108,7 +108,7 @@ export default function Hero() {
 
             {/* Badge: +10 Anos - posição ajustada no mobile */}
             <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 lg:right-0 xl:right-8 px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl text-white text-center shadow-lg min-w-[100px] sm:min-w-[140px] bg-[#c9a962] z-20 animate-float" style={{ animationDelay: '1.8s' }}>
-              <p className="font-sans text-lg sm:text-2xl md:text-3xl font-bold leading-tight">+10</p>
+              <p className="font-sans text-lg sm:text-2xl md:text-3xl font-bold leading-tight">+4</p>
               <p className="font-sans text-[9px] sm:text-xs md:text-sm font-normal mt-0.5">Anos de experiência</p>
             </div>
 
